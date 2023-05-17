@@ -102,10 +102,10 @@
                 <strong>{{__('trans.laTex')}}:</strong>
 <select name="tex_files[]" class="form-control" multiple>
     @foreach ($files as $file )
-        <option value="{{$file}}" @if(in_array($file,$assignment->tex_files))  
+        <option value="{{$file}}" @if(in_array($file,$assignment->tex_files))
         selected
-        @endif)>{{$file}}</option>
-       
+        @endif>{{$file}}</option>
+
     @endforeach
   </select>
             </div>
