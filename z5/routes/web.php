@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\MaximaController;
+use App\Http\Controllers\CalcController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,10 +18,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/calculate', function () {
+Route::get('/calc', function () {
     return view('calculate');
 });
 
-Route::get('/maxima', [MaximaController::class, 'index']);
-
-Route::post('/compare-result', [MaximaController::class, 'compareResult'])->name('compare.result');
+Route::post('/compare-result', [CalcController::class, 'compareResult'])->name('compare.result');

@@ -74,3 +74,15 @@ button.btn-block {
     margin-left: auto;
     margin-right: auto;
   }
+
+  .result-item {
+    margin-bottom: 10px;
+  }
+
+  .correct {
+    color: rgb(0, 189, 0);
+  }
+  
+  .incorrect {
+    color: rgb(210, 0, 0);
+  }
