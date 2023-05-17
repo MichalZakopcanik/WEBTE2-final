@@ -10,13 +10,13 @@
 
         <div class="pull-left">
 
-            <h2> Show User</h2>
+            <h2>{{__('trans.Show User')}}</h2>
 
         </div>
 
         <div class="pull-right">
 
-            <a class="btn btn-primary" href="{{ route('users.index') }}"> Back</a>
+            <a class="btn btn-primary" href="{{ route('users.index') }}"> {{__('trans.Back')}}</a>
 
         </div>
 
@@ -31,7 +31,7 @@
 
         <div class="form-group">
 
-            <strong>Name:</strong>
+            <strong>{{__('trans.Name')}}</strong>
 
             {{ $user->name }}
 
@@ -43,7 +43,7 @@
 
         <div class="form-group">
 
-            <strong>Email:</strong>
+            <strong>{{__('trans.email')}}</strong>
 
             {{ $user->email }}
 
@@ -55,7 +55,7 @@
 
         <div class="form-group">
 
-            <strong>Roles:</strong>
+            <strong>{{__('trans.roles')}}</strong>
 
             @if(!empty($user->getRoleNames()))
 

@@ -9,13 +9,13 @@
 
         <div class="pull-left">
 
-            <h2>Edit New User</h2>
+            <h2>{{__('trans.Euser')}}</h2>
 
         </div>
 
         <div class="pull-right">
 
-            <a class="btn btn-primary" href="{{ route('users.index') }}"> Back</a>
+            <a class="btn btn-primary" href="{{ route('users.index') }}"> {{__('trans.Back')}}</a>
 
         </div>
 
@@ -53,7 +53,7 @@
 
         <div class="form-group">
 
-            <strong>Name:</strong>
+            <strong>{{__('trans.Name')}}:</strong>
 
             {!! Form::text('name', null, array('placeholder' => 'Name','class' => 'form-control')) !!}
 
@@ -65,7 +65,7 @@
 
         <div class="form-group">
 
-            <strong>Email:</strong>
+            <strong>{{__('trans.email')}}:</strong>
 
             {!! Form::text('email', null, array('placeholder' => 'Email','class' => 'form-control')) !!}
 
@@ -77,7 +77,7 @@
 
         <div class="form-group">
 
-            <strong>Password:</strong>
+            <strong>{{__('trans.pass')}}:</strong>
 
             {!! Form::password('password', array('placeholder' => 'Password','class' => 'form-control')) !!}
 
@@ -89,7 +89,7 @@
 
         <div class="form-group">
 
-            <strong>Confirm Password:</strong>
+            <strong>{{__('trans.ConPass')}}</strong>
 
             {!! Form::password('confirm-password', array('placeholder' => 'Confirm Password','class' => 'form-control')) !!}
 
@@ -101,7 +101,7 @@
 
         <div class="form-group">
 
-            <strong>Role:</strong>
+            <strong>{{__('trans.Roles')}}:</strong>
 
             {!! Form::select('roles[]', $roles,$userRole, array('class' => 'form-control','multiple')) !!}
 
@@ -111,7 +111,7 @@
 
     <div class="col-xs-12 col-sm-12 col-md-12 text-center">
 
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary">{{__('trans.submit')}}</button>
 
     </div>
 

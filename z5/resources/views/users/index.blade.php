@@ -9,13 +9,13 @@
 
         <div class="pull-left">
 
-            <h2>Users Management</h2>
+            <h2>{{__('trans.Userman')}}</h2>
 
         </div>
 
         <div class="pull-right">
 
-            <a class="btn btn-success" href="{{ route('users.create') }}"> Create New User</a>
+            <a class="btn btn-success" href="{{ route('users.create') }}">{{__('trans.CNUser')}}</a>
 
         </div>
 
@@ -39,15 +39,15 @@
 
  <tr>
 
-   <th>No</th>
+   <th>{{__('trans.Id')}}</th>
 
-   <th>Name</th>
+   <th>{{__('trans.Name')}}</th>
 
-   <th>Email</th>
+   <th>{{__('trans.email')}}</th>
 
-   <th>Roles</th>
+   <th>{{__('trans.Roles')}}</th>
 
-   <th width="280px">Action</th>
+   <th width="280px">{{__('trans.Action')}}</th>
 
  </tr>
 
@@ -77,9 +77,9 @@
 
     <td>
 
-       <a class="btn btn-info" href="{{ route('users.show',$user->id) }}">Show</a>
+       <a class="btn btn-info" href="{{ route('users.show',$user->id) }}">{{__('trans.Show')}}</a>
 
-       <a class="btn btn-primary" href="{{ route('users.edit',$user->id) }}">Edit</a>
+       <a class="btn btn-primary" href="{{ route('users.edit',$user->id) }}">{{__('trans.Edit')}}</a>
 
         {!! Form::open(['method' => 'DELETE','route' => ['users.destroy', $user->id],'style'=>'display:inline']) !!}
 

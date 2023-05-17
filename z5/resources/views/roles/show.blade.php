@@ -9,7 +9,7 @@
 
         <div class="pull-left">
 
-            <h2> Show Role</h2>
+            <h2>Show Role</h2>
 
         </div>
 

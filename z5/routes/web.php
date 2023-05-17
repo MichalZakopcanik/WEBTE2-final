@@ -24,18 +24,10 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::group(['middleware' => ['auth']], function() {
-
-    Route::get('change-language/{locale}', function (string $locale) {
-        if (! in_array($locale, ['en', 'sk'])) {
-            abort(400);
-        }
-        App::setLocale($locale);
-        return back();
-    });
-
-
-
+Route::group([
+	'prefix' => LaravelLocalization::setLocale(),
+	'middleware' => [ 'auth','localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ]
+], function() {
     Route::resource('roles', RoleController::class);
 
     Route::resource('users', UserController::class);

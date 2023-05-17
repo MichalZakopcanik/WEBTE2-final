@@ -9,13 +9,13 @@
 
         <div class="pull-left">
 
-            <h2>Assignments Management</h2>
+            <h2>{{__('trans.Assignments Management')}}</h2>
 
         </div>
 
         <div class="pull-right">
 
-            <a class="btn btn-success" href="{{ route('assignments.create') }}"> Create New Assignment</a>
+            <a class="btn btn-success" href="{{ route('assignments.create') }}"> {{__('trans.CNA')}}</a>
 
         </div>
 
@@ -39,17 +39,17 @@
 
  <tr>
 
-   <th>{{__("Id")}}</th>
-   <th>{{__("From")}}</th>
+   <th>{{__('trans.Id')}}</th>
+   <th>{{__('trans.From')}}</th>
 
-   <th>{{__("To")}}</th>
+   <th>{{__('trans.To')}}</th>
 
-   <th>{{__("Max points")}}</th>
+   <th>{{__('trans.Max points')}}</th>
 
-   <th>{{__("Files used")}}</th>
-  <th>{{__("Created by")}}</th>
+   <th>{{__('trans.Files used')}}</th>
+  <th>{{__('trans.Created by')}}</th>
 
-   <th width="280px">Action</th>
+   <th width="280px">{{__('Action')}}</th>
 
  </tr>
 
@@ -76,9 +76,8 @@
     </td>
     <td>
 
-       <a class="btn btn-info" href="{{ route('assignments.show',$assignment->id) }}">Show</a>
 
-       <a class="btn btn-primary" href="{{ route('assignments.edit',$assignment->id) }}">Edit</a>
+       <a class="btn btn-primary" href="{{ route('assignments.edit',$assignment->id) }}">{{__('trans.Edit')}}</a>
 
         {!! Form::open(['method' => 'DELETE','route' => ['assignments.destroy', $assignment->id],'style'=>'display:inline']) !!}
 
