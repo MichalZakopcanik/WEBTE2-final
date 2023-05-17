@@ -55,8 +55,8 @@
     'NoMail' => 'If you did not receive the email',
     'ClickReq' => 'click here to request another',
      //Rest are empty -> won't show -> in case they're needed TODO delete
-    '' => '',
-    '' => '',
+    'Dashboard' => 'Dashboard',
+    'Welcome' => 'Welcome',
     '' => '',
     '' => '',
     '' => '',

@@ -55,8 +55,8 @@ return [
     'NoMail' => 'Ak ste email nedostali',
     'ClickReq' => 'kliknite sem a požiadajte o ďalší',
     //Rest are empty -> won't show -> in case they're needed TODO delete
-    '' => '',
-    '' => '',
+    'Dashboard' => 'Prístrojový panel',
+    'Welcome' => 'Vitajte na stránke',
     '' => '',
     '' => '',
     '' => '',
