@@ -1,0 +1,54 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Casts\Attribute;
+use App\Models\User;
+
+class Assignment extends Model
+{
+    use HasFactory;
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array<int, string>
+     */
+    protected $fillable = [
+        'from_time',
+        'to_time',
+        'max_points',
+        'tex_files',
+        'created_by',
+    ];
+    /**
+     * The attributes that should be cast.
+     *
+     * @var array<string, string>
+     */
+    protected $casts = [
+        'from_time' => 'datetime',
+        'to_time' => 'datetime',
+        'tex_files' => 'array',
+    ];
+    
+    public function owner():BelongsTo{
+        return $this->belongsTo(User::class,'created_by');
+    }
+    public function getAttributeFileList(){
+        return implode(', ',$this->tex_files);
+    }
+        /**
+     * Get the user's first name.
+     */
+    public function fileList(): Attribute
+    {
+        
+        return Attribute::make(
+            get: fn (mixed $value, array $attributes) => implode(", ",json_decode($attributes['tex_files'])),
+        );
+    }
+}
