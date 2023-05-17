@@ -28,7 +28,7 @@
 
   <div class="alert alert-danger">
 
-    <strong>Whoops!</strong> There were some problems with your input.<br><br>
+    <strong>Whoops!</strong> {{__('trans.InputProblem')}}.<br><br>
 
     <ul>
 
@@ -55,9 +55,9 @@
 
             <div class="form-group">
 
-                <strong>{{__('trans.dateFrom')}}</strong>
+                <strong>{{__('trans.dateFrom')}}:</strong>
                     <div class='input-group date' id='dtp_from'>
-                        <input type='text' class="form-control" name="from_time"/>
+                        <input type='date' class="form-control" name="from_time"/>
                         <span class="input-group-addon">
                         <span class="glyphicon glyphicon-calendar"></span>
                         </span>
@@ -71,9 +71,9 @@
 
             <div class="form-group">
 
-                <strong>{{__('trans.dateTo')}}</strong>
+                <strong>{{__('trans.dateTo')}}:</strong>
                      <div class='input-group date' id='dtp_to'>
-                        <input type='text' class="form-control" name="to_time"/>
+                        <input type='date' class="form-control" name="to_time"/>
                         <span class="input-group-addon">
                         <span class="glyphicon glyphicon-calendar"></span>
                         </span>
@@ -87,7 +87,7 @@
 
             <div class="form-group">
 
-                <strong>{{__('trans.Max Poinsts')}}</strong>
+                <strong>{{__('trans.Max points')}}:</strong>
 
                 {!! Form::number('max_points',$assignment->max_points ,['placeholder' => 'Maximum points', 'class' => 'form-control']) !!}
 
@@ -99,7 +99,7 @@
 
             <div class="form-group">
 
-                <strong>{{__('trans.laTex')}}</strong>
+                <strong>{{__('trans.laTex')}}:</strong>
 <select name="tex_files[]" class="form-control" multiple>
     @foreach ($files as $file )
         <option value="{{$file}}" @if(in_array($file,$assignment->tex_files))  

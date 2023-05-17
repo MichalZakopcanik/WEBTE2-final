@@ -28,7 +28,7 @@
 
   <div class="alert alert-danger">
 
-    <strong>Whoops!</strong> There were some problems with your input.<br><br>
+    <strong>Whoops!</strong> {{__('trans.InputProblem')}}.<br><br>
 
     <ul>
 
@@ -89,7 +89,7 @@
 
         <div class="form-group">
 
-            <strong>{{__('trans.ConPass')}}</strong>
+            <strong>{{__('trans.ConPass')}}:</strong>
 
             {!! Form::password('confirm-password', array('placeholder' => 'Confirm Password','class' => 'form-control')) !!}
 

@@ -13,7 +13,6 @@
     <link rel="stylesheet" href="https://editor.codecogs.com/assets/css/eqneditor.css"/>
 </head>
 <body>
-<body>
     <div id="equation-editor">
         <div id="history"></div>
         <div id="toolbar"></div>
@@ -25,7 +24,7 @@
     <div class="container">
     <div class="row justify-content-center">
     <div style="max-width: 200px;">
-            <button id="compareBtn" class="btn btn-success btn-block">Porovnaj výsledok</button>
+            <button id="compareBtn" class="btn btn-success btn-block">{{__('trans.Compare')}}</button>
 </div>
     </div>
     </div>
