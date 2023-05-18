@@ -9,13 +9,7 @@
 
         <div class="pull-left">
 
-            <h2>Users Management</h2>
-
-        </div>
-
-        <div class="pull-right">
-
-            <a class="btn btn-success" href="{{ route('users.create') }}"> Create New User</a>
+            <h2>User Hub</h2>
 
         </div>
 
@@ -39,8 +33,6 @@
 
  <tr>
 
-   <th>No</th>
-
    <th>Name</th>
 
    <th>Email</th>
@@ -52,10 +44,8 @@
  </tr>
 
  @foreach ($data as $key => $user)
-
+ @if ($user->id == Auth::id())
   <tr>
-
-    <td>{{ ++$i }}</td>
 
     <td>{{ $user->name }}</td>
 
@@ -77,19 +67,12 @@
 
     <td>
 
-       <a class="btn btn-info" href="{{ route('users.show',$user->id) }}">Show</a>
-
-       <a class="btn btn-primary" href="{{ route('users.edit',$user->id) }}">Edit</a>
-
-        {!! Form::open(['method' => 'DELETE','route' => ['users.destroy', $user->id],'style'=>'display:inline']) !!}
-
-            {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
-
-        {!! Form::close() !!}
+       <a class="btn btn-info" href="{{ route('students.show',$user->id) }}">Assignments</a>
 
     </td>
 
   </tr>
+  @endif
 
  @endforeach
 
@@ -97,7 +80,6 @@
 
 
 {!! $data->render() !!}
-
 
 
 @endsection

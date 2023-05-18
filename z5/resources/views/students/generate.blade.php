@@ -19,7 +19,18 @@
     </script>
 </head>
 <body>
-<body>
+    <div id="assignmentId">{{ $assignmentId }}</div> 
+    <div id="task">{{ $taskContent }}</div>
+    
+    @if(isset($filename))
+       <img src="{{ asset('../z5/images/' . $filename) }}" alt="TaskImage">
+    @endif
+
+  <!--  @if(isset($imageFilePath))
+        <img src="{{ asset('../z5/storage/' . $imageFilePath) }}" alt="TaskImage"> 
+    @endif-->
+
+    <div id="solution">{{ $solutionContent }}</div>
     <div id="equation-editor">
         <div id="history"></div>
         <div id="toolbar"></div>

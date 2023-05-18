@@ -50,8 +50,9 @@ class User extends Authenticatable
     ];
 
 
-    public function assignments(): HasMany{
-        return $this->hasMany(Assignment::class);
+    public function assignments()
+    {
+        return $this->belongsToMany(Assignment::class, 'assignment_user', 'user_id', 'assignment_id');
     }
     public function results(): HasMany{
         return $this->hasMany(Result::class);

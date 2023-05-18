@@ -19,7 +19,7 @@
     for (var i = 0; i < spans.length; i++) {
       equationText += spans[i].textContent;
     }
-    console.log(equationText);
+    //console.log(equationText);
     var csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
      $.ajax({
       url: 'https://site249.webte.fei.stuba.sk/z5/compare-result',

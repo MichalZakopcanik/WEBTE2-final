@@ -112,6 +112,8 @@ class AssignmentController extends Controller
         $input['created_by'] = Auth::id();
        
         $ass = Assignment::create($input);
+        $students = $request->input('students', []);
+        $ass->users()->attach($students);
         foreach($input['students'] as $student)
 {
     $tempRes = Result::create([

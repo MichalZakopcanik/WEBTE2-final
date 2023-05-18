@@ -39,14 +39,20 @@ class Assignment extends Model
         return $this->belongsTo(User::class,'created_by');
     }
     public function getAttributeFileList(){
+
+        //return json_encode($this->tex_files);
+
         return implode(', ',$this->tex_files);
     }
-        /**
-     * Get the user's first name.
-     */
+    public function users()
+    {
+        return $this->belongsToMany(User::class, 'assignment_user', 'assignment_id', 'user_id');
+    }
     public function fileList(): Attribute
     {
-        
+        /*return new Attribute(function ($value) {
+            return json_decode($value, true);
+        });*/
         return Attribute::make(
             get: fn (mixed $value, array $attributes) => implode(", ",json_decode($attributes['tex_files'])),
         );
