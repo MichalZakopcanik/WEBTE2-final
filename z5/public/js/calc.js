@@ -7,25 +7,27 @@
     EqEditor.Toolbar.link('toolbar').addTextArea(textarea);
   };
 
-  document.addEventListener('DOMContentLoaded', function() {
+ /* document.addEventListener('DOMContentLoaded', function() {
     var compareBtn = document.getElementById('compareBtn');
     compareBtn.addEventListener('click', compareResults);
-  });
+  });*/
 
-  function compareResults() {
+  function compareResults(result) {
     var latexInput = document.getElementById('latexInput');
     var spans = latexInput.getElementsByTagName('span');
     var equationText = '';
     for (var i = 0; i < spans.length; i++) {
       equationText += spans[i].textContent;
     }
-    //console.log(equationText);
+    console.log(equationText);
+    console.log(result);
     var csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
      $.ajax({
       url: 'https://site249.webte.fei.stuba.sk/z5/compare-result',
       method: 'POST',
       data: {
-        input: equationText
+        input: equationText,
+        result: result
       },
       headers: {
         'X-CSRF-TOKEN': csrfToken 

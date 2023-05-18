@@ -39,8 +39,6 @@
 
  <tr>
 
-   <th>No</th>
-
    <th>{{__('trans.Name')}}</th>
 
    <th>{{__('trans.email')}}</th>
@@ -75,10 +73,8 @@
 
     <td>
 
-       <a class="btn btn-info" href="{{ route('students.show',$user->id) }}">Assignments</a>
+       <a class="btn btn-primary" href="{{ route('students.show',$user->id) }}">Assignments</a>
        <a class="btn btn-info" href="{{ route('users.show',$user->id) }}">{{__('trans.Show')}}</a>
-
-       <a class="btn btn-primary" href="{{ route('users.edit',$user->id) }}">{{__('trans.Edit')}}</a>
 
     </td>
 

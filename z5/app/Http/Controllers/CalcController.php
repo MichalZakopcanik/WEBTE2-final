@@ -8,7 +8,7 @@ class CalcController extends Controller
 {
     public function compareResult(Request $request){
         $input = $request->input('input');
-        $input2 = '\frac{2}{5a}';
+        $input2 = $request->input('result');
        
         $command = "python3 /var/www/site249.webte.fei.stuba.sk/z5/app/Python/sym.py";
         $arguments = escapeshellarg($input) . ' ' . escapeshellarg($input2);

@@ -19,18 +19,23 @@
     </script>
 </head>
 <body>
-    <div id="assignmentId">{{ $assignmentId }}</div> 
-    <div id="task">{{ $taskContent }}</div>
-    
+   <!-- <div id="assignmentId">{{ $assignmentId }}</div> -->
+   <div class="d-flex flex-column align-items-center justify-content-center">
+    <div id="task">Pr. {{ $taskContent }}</div>
+    </div>
     @if(isset($filename))
-       <img src="{{ asset('../z5/images/' . $filename) }}" alt="TaskImage">
+    <div class="image-container">
+        <div class="image-wrapper">
+            <img class="responsive-image" src="{{ asset('../z5/images/' . $filename) }}" alt="TaskImage">
+        </div>
+    </div>   
     @endif
 
   <!--  @if(isset($imageFilePath))
         <img src="{{ asset('../z5/storage/' . $imageFilePath) }}" alt="TaskImage"> 
     @endif-->
 
-    <div id="solution">{{ $solutionContent }}</div>
+    <!-- <div id="solution">{{ $solutionContent }}</div>-->
     <div id="equation-editor">
         <div id="history"></div>
         <div id="toolbar"></div>
@@ -42,7 +47,7 @@
     <div class="container">
     <div class="row justify-content-center mt-2 mb-5">
     <div style="max-width: 200px;">
-            <button id="compareBtn" class="btn btn-success btn-block">Porovnaj výsledok</button>
+    <button id="compareBtn" class="btn btn-success btn-block" onclick="compareResults({{ json_encode($solutionContent) }})">Porovnaj výsledok</button>
     </div>
     </div>
     </div>

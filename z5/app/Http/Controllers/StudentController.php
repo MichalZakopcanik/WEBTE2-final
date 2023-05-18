@@ -90,8 +90,8 @@ class StudentController extends Controller
     preg_match_all($taskPattern, $latexContent, $taskMatches);
     preg_match_all($solutionPattern, $latexContent, $solutionMatches);
     $tasks = $taskMatches[2];
+    $imageNames = [];
     foreach ($tasks as &$task) {
-        
         preg_match('/\\\\includegraphics{([^}]+)}/', $task, $imageMatch);
         $task = preg_replace('/\\\\includegraphics{[^}]+}/', '', $task);
        // dd($tasks);
@@ -99,7 +99,7 @@ class StudentController extends Controller
         
         // Process the image path to get the filename
         $filename = basename($imagePath);
-        
+        array_push($imageNames, $filename);
         // Construct the full path to the image file
         //$imageFilePath = 'assignments/images/' . $filename;
         //dd($imageFilePath);
@@ -117,8 +117,10 @@ class StudentController extends Controller
 
     $tasks = array_combine($taskMatches[1], $tasks);
 
+    $imageNames = array_combine($taskMatches[1], $imageNames);
 
     $randomSection = array_rand($tasks);
+    $filename = $imageNames[$randomSection];
     $taskContent = $tasks[$randomSection];
     $solutionContent = $solutions[$randomSection];
     
