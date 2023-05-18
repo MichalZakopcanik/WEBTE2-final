@@ -36,3 +36,4 @@ Route::group([
 
 
 });
+Route::get('/download-pdf', 'PDFController@downloadPDF')->name('download.pdf');

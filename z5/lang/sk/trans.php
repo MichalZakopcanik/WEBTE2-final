@@ -58,9 +58,9 @@ return [
     'Dashboard' => 'Prístrojový panel',
     'Welcome' => 'Vitajte na stránke',
     //TODO Instructions for both teachers and students
-    'TeacherInstructions' => '',
-    'StudentInstructions' => '',
-    '' => '',
+    'TeacherInstructions' => 'Tu sú pokyny pre učiteľov',
+    'StudentInstructions' => 'Tu sú pokyny pre študentov',
+    'Download' => 'Stiahnuť',
     '' => '',
     '' => '',
     '' => '',
