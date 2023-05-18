@@ -8,7 +8,7 @@
                 <div class="card-header">{{__('trans.Dashboard')}}</div>
 
                 <div class="card-body">
-
+                    {{__('trans.StudentInstructions')}}
                 </div>
             </div>
         </div>

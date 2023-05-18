@@ -57,16 +57,14 @@
      //Rest are empty -> won't show -> in case they're needed TODO delete
     'Dashboard' => 'Dashboard',
     'Welcome' => 'Welcome',
+     //TODO Instructions for both teachers and students
+    'TeacherInstructions' => '',
+    'StudentInstructions' => '',
     '' => '',
     '' => '',
     '' => '',
     '' => '',
     '' => '',
     '' => '',
-    '' => '',
-    '' => '',
-    '' => '',
-
-
 
 ];
