@@ -9,13 +9,13 @@
 
         <div class="pull-left">
 
-            <h2>Edit New User</h2>
+            <h2>{{__('trans.editass')}}</h2>
 
         </div>
 
         <div class="pull-right">
 
-            <a class="btn btn-primary" href="{{ route('users.index') }}"> Back</a>
+            <a class="btn btn-primary" href="{{ route('users.index') }}">{{__('trans.Back')}}</a>
 
         </div>
 
@@ -28,7 +28,7 @@
 
   <div class="alert alert-danger">
 
-    <strong>Whoops!</strong> There were some problems with your input.<br><br>
+    <strong>Whoops!</strong> {{__('trans.InputProblem')}}.<br><br>
 
     <ul>
 
@@ -55,9 +55,9 @@
 
             <div class="form-group">
 
-                <strong>{{__("Date from:")}}</strong>
+                <strong>{{__('trans.dateFrom')}}:</strong>
                     <div class='input-group date' id='dtp_from'>
-                        <input type='text' class="form-control" name="from_time"/>
+                        <input type='date' class="form-control" name="from_time"/>
                         <span class="input-group-addon">
                         <span class="glyphicon glyphicon-calendar"></span>
                         </span>
@@ -71,9 +71,9 @@
 
             <div class="form-group">
 
-                <strong>{{__("Date to:")}}</strong>
+                <strong>{{__('trans.dateTo')}}:</strong>
                      <div class='input-group date' id='dtp_to'>
-                        <input type='text' class="form-control" name="to_time"/>
+                        <input type='date' class="form-control" name="to_time"/>
                         <span class="input-group-addon">
                         <span class="glyphicon glyphicon-calendar"></span>
                         </span>
@@ -87,7 +87,7 @@
 
             <div class="form-group">
 
-                <strong>Max points:</strong>
+                <strong>{{__('trans.Max points')}}:</strong>
 
                 {!! Form::number('max_points',$assignment->max_points ,['placeholder' => 'Maximum points', 'class' => 'form-control']) !!}
 
@@ -99,13 +99,13 @@
 
             <div class="form-group">
 
-                <strong>LaTex files:</strong>
+                <strong>{{__('trans.laTex')}}:</strong>
 <select name="tex_files[]" class="form-control" multiple>
     @foreach ($files as $file )
-        <option value="{{$file}}" @if(in_array($file,$assignment->tex_files))  
+        <option value="{{$file}}" @if(in_array($file,$assignment->tex_files))
         selected
-        @endif)>{{$file}}</option>
-       
+        @endif>{{$file}}</option>
+
     @endforeach
   </select>
             </div>
@@ -115,7 +115,7 @@
 
             <div class="form-group">
 
-                <strong>Students:</strong>
+                <strong>{{__('trans.student')}}:</strong>
 
                 {!! Form::select('students[]', $students, $assignedStudents, ['class' => 'form-control', 'multiple']) !!}
 
@@ -125,7 +125,7 @@
 
     <div class="col-xs-12 col-sm-12 col-md-12 text-center">
 
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary">{{__('trans.submit')}}</button>
 
     </div>
 

@@ -9,13 +9,13 @@
 
         <div class="pull-left">
 
-            <h2>Edit Role</h2>
+            <h2>{{__('trans.Erole')}}</h2>
 
         </div>
 
         <div class="pull-right">
 
-            <a class="btn btn-primary" href="{{ route('roles.index') }}"> Back</a>
+            <a class="btn btn-primary" href="{{ route('roles.index') }}">{{__('trans.Back')}}</a>
 
         </div>
 
@@ -28,7 +28,7 @@
 
     <div class="alert alert-danger">
 
-        <strong>Whoops!</strong> There were some problems with your input.<br><br>
+        <strong>Whoops!</strong> {{__('trans.InputProblem')}}.<br><br>
 
         <ul>
 
@@ -53,7 +53,7 @@
 
         <div class="form-group">
 
-            <strong>Name:</strong>
+            <strong>{{__('trans.Name')}}:</strong>
 
             {!! Form::text('name', null, array('placeholder' => 'Name','class' => 'form-control')) !!}
 
@@ -65,7 +65,7 @@
 
         <div class="form-group">
 
-            <strong>Permission:</strong>
+            <strong>{{__('trans.Permissions')}}:</strong>
 
             <br/>
 
@@ -85,7 +85,7 @@
 
     <div class="col-xs-12 col-sm-12 col-md-12 text-center">
 
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary">{{__('trans.submit')}}</button>
 
     </div>
 

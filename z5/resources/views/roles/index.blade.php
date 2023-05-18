@@ -9,7 +9,7 @@
 
         <div class="pull-left">
 
-            <h2>Role Management</h2>
+            <h2>{{__('trans.RoleManagement')}}</h2>
 
         </div>
 
@@ -17,7 +17,7 @@
 
         @can('role-create')
 
-            <a class="btn btn-success" href="{{ route('roles.create') }}"> Create New Role</a>
+            <a class="btn btn-success" href="{{ route('roles.create') }}">{{__('trans.CNRole')}}</a>
 
             @endcan
 
@@ -45,9 +45,9 @@
 
      <th>No</th>
 
-     <th>Name</th>
+     <th>{{__('trans.Name')}}</th>
 
-     <th width="280px">Action</th>
+     <th width="280px">{{__('trans.Action')}}</th>
 
   </tr>
 
@@ -61,11 +61,11 @@
 
         <td>
 
-            <a class="btn btn-info" href="{{ route('roles.show',$role->id) }}">Show</a>
+            <a class="btn btn-info" href="{{ route('roles.show',$role->id) }}">{{__('trans.Show')}}</a>
 
             @can('role-edit')
 
-                <a class="btn btn-primary" href="{{ route('roles.edit',$role->id) }}">Edit</a>
+                <a class="btn btn-primary" href="{{ route('roles.edit',$role->id) }}">{{__('trans.Edit')}}</a>
 
             @endcan
 

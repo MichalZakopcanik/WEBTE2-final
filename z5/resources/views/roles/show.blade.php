@@ -9,13 +9,13 @@
 
         <div class="pull-left">
 
-            <h2> Show Role</h2>
+            <h2>{{__('trans.ShowRole')}}</h2>
 
         </div>
 
         <div class="pull-right">
 
-            <a class="btn btn-primary" href="{{ route('roles.index') }}"> Back</a>
+            <a class="btn btn-primary" href="{{ route('roles.index') }}"> {{__('trans.Back')}}</a>
 
         </div>
 
@@ -30,7 +30,7 @@
 
         <div class="form-group">
 
-            <strong>Name:</strong>
+            <strong>{{__('trans.Name')}}:</strong>
 
             {{ $role->name }}
 
@@ -42,7 +42,7 @@
 
         <div class="form-group">
 
-            <strong>Permissions:</strong>
+            <strong>{{__('trans.Permissions')}}:</strong>
 
             @if(!empty($rolePermissions))
 

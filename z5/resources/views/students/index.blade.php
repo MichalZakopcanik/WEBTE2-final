@@ -9,7 +9,13 @@
 
         <div class="pull-left">
 
-            <h2>User Hub</h2>
+            <h2>{{__('trans.Userman')}}</h2>
+
+        </div>
+
+        <div class="pull-right">
+
+            <a class="btn btn-success" href="{{ route('users.create') }}">{{__('trans.CNUser')}}</a>
 
         </div>
 
@@ -33,13 +39,15 @@
 
  <tr>
 
-   <th>Name</th>
+   <th>No</th>
 
-   <th>Email</th>
+   <th>{{__('trans.Name')}}</th>
 
-   <th>Roles</th>
+   <th>{{__('trans.email')}}</th>
 
-   <th width="280px">Action</th>
+   <th>{{__('trans.Roles')}}</th>
+
+   <th width="280px">{{__('trans.Action')}}</th>
 
  </tr>
 
@@ -68,6 +76,9 @@
     <td>
 
        <a class="btn btn-info" href="{{ route('students.show',$user->id) }}">Assignments</a>
+       <a class="btn btn-info" href="{{ route('users.show',$user->id) }}">{{__('trans.Show')}}</a>
+
+       <a class="btn btn-primary" href="{{ route('users.edit',$user->id) }}">{{__('trans.Edit')}}</a>
 
     </td>
 

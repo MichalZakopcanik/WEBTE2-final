@@ -9,13 +9,13 @@
 
         <div class="pull-left">
 
-            <h2>{{__('trans.Euser')}}</h2>
+            <h2>{{__('trans.CNUser')}}</h2>
 
         </div>
 
         <div class="pull-right">
 
-            <a class="btn btn-primary" href="{{ route('users.index') }}"> {{__('trans.Back')}}</a>
+            <a class="btn btn-primary" href="{{ route('users.index') }}">{{__('trans.Back')}}</a>
 
         </div>
 
@@ -45,7 +45,8 @@
 @endif
 
 
-{!! Form::model($user, ['method' => 'PATCH','route' => ['users.update', $user->id]]) !!}
+
+{!! Form::open(array('route' => 'users.store','method'=>'POST')) !!}
 
 <div class="row">
 
@@ -65,7 +66,7 @@
 
         <div class="form-group">
 
-            <strong>{{__('trans.email')}}:</strong>
+            <strong>{{__('trans.Email')}}:</strong>
 
             {!! Form::text('email', null, array('placeholder' => 'Email','class' => 'form-control')) !!}
 
@@ -77,7 +78,7 @@
 
         <div class="form-group">
 
-            <strong>{{__('trans.pass')}}:</strong>
+            <strong>{{__('trans.Password')}}:</strong>
 
             {!! Form::password('password', array('placeholder' => 'Password','class' => 'form-control')) !!}
 
@@ -101,9 +102,9 @@
 
         <div class="form-group">
 
-            <strong>{{__('trans.Roles')}}:</strong>
+            <strong>{{__('trans.Role')}}:</strong>
 
-            {!! Form::select('roles[]', $roles,$userRole, array('class' => 'form-control','multiple')) !!}
+            {!! Form::select('roles[]', $roles,[], array('class' => 'form-control','multiple')) !!}
 
         </div>
 
