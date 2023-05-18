@@ -1,4 +1,8 @@
 <?php
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\StudentController;
+use App\Http\Controllers\RoleController;
+use App\Http\Controllers\AssignmentController;
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CalcController;
@@ -18,7 +22,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/calc', function () {
+Route::get('/calculate', function () {
     return view('calculate');
 });
 
