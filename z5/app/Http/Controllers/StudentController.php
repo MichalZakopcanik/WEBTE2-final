@@ -95,16 +95,16 @@ class StudentController extends Controller
         preg_match('/\\\\includegraphics{([^}]+)}/', $task, $imageMatch);
         $task = preg_replace('/\\\\includegraphics{[^}]+}/', '', $task);
        // dd($tasks);
+       if(!empty($imageMatch)){
         $imagePath = $imageMatch[1]; // Extract the image path from the task
         
-        // Process the image path to get the filename
+        // Filename
         $filename = basename($imagePath);
         array_push($imageNames, $filename);
-        // Construct the full path to the image file
+       }
+        // Full path to the image file
         //$imageFilePath = 'assignments/images/' . $filename;
         //dd($imageFilePath);
-        // Now you can use $imageFilePath to access the corresponding image file
-        // Perform your desired operations with the image file
     }
     unset($task);
 
@@ -116,17 +116,16 @@ class StudentController extends Controller
     $solutions = array_combine($solutionMatches[1], $solutionEquations);
 
     $tasks = array_combine($taskMatches[1], $tasks);
-
-    $imageNames = array_combine($taskMatches[1], $imageNames);
-
     $randomSection = array_rand($tasks);
+    $filename = null;
+if(!empty($imageNames)){
+    $imageNames = array_combine($taskMatches[1], $imageNames);
     $filename = $imageNames[$randomSection];
+}
     $taskContent = $tasks[$randomSection];
     $solutionContent = $solutions[$randomSection];
-    
-    // Store or process the generated task, solution, and section contents as needed
-    
-    // Return a response or redirect
+    $solutionContent = preg_replace('/.*=/', '', $solutionContent);
+    //dd($solutionContent);
     return view('students.generate', compact('assignmentId', 'taskContent', 'solutionContent', 'filename'));
    // return view('students.generate', compact('assignmentId', 'taskContent', 'solutionContent', 'imageFilePath'));
 }

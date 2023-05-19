@@ -1,5 +1,5 @@
 <?php
- return[
+return [
     'Assignments Management' => 'Assignments management',
     'Id' => 'ID',
     'From' => 'From',
@@ -54,19 +54,17 @@
     'VerLinkCheck' => 'Before proceeding, please check your email for a verification link',
     'NoMail' => 'If you did not receive the email',
     'ClickReq' => 'click here to request another',
-     //Rest are empty -> won't show -> in case they're needed TODO delete
+    //Rest are empty -> won't show -> in case they're needed TODO delete
     'Dashboard' => 'Dashboard',
     'Welcome' => 'Welcome',
+    //TODO Instructions for both teachers and students
+    'TeacherInstructions' => 'Here are the instructions for teachers',
+    'StudentInstructions' => 'Here are the instructions for students',
+    'Download' => 'Download',
     '' => '',
     '' => '',
     '' => '',
     '' => '',
     '' => '',
-    '' => '',
-    '' => '',
-    '' => '',
-    '' => '',
-
-
 
 ];

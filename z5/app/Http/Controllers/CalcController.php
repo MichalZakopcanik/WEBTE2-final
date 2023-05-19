@@ -15,7 +15,7 @@ class CalcController extends Controller
         $command .= ' ' . $arguments . ' 2>&1';
         
         $output = shell_exec($command);
-        
+        var_dump($output);
         $result = json_decode($output, true);
 
         $result['input'] = $input;

@@ -1,6 +1,7 @@
 <?php
 use App\Http\Controllers\AssignmentController;
 use App\Http\Controllers\CalcController;
+use App\Http\Controllers\PDFController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\UserController;
@@ -39,4 +40,11 @@ Route::group([
     Route::resource('users', UserController::class);
     Route::resource('students', StudentController::class);
     Route::resource('assignments', AssignmentController::class);
+});
+Route::get('/download-pdf', [PDFController::class, 'downloadPDF'])->name('download.pdf');
+Route::get('/studentTest', function () {
+    return view('student');
+});
+Route::get('/teacherTest', function () {
+    return view('teacher');
 });

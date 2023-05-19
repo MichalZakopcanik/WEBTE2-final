@@ -21,6 +21,11 @@
     }
     console.log(equationText);
     console.log(result);
+
+    if (equationText.includes('=')) {
+      equationText = equationText.substring(equationText.lastIndexOf('=') + 1);
+    }
+    console.log(equationText);
     var csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
      $.ajax({
       url: 'https://site249.webte.fei.stuba.sk/z5/compare-result',
@@ -34,8 +39,8 @@
       },
       dataType: 'json',
       success: function(response) {
-       /* console.log("Success");
-        console.log(response.result);*/
+        console.log("Success");
+        console.log(response.result);
        
        
         //TODO: upraviť podľa jazyku
@@ -57,7 +62,7 @@
         }
       },
       error: function(xhr, status, error) {
-       /* console.log("Error");
+        console.log("Error");
         console.log(xhr.responseText); // Log the response text for debugging
         console.log(xhr.status); // Log the status code for debugging
         console.log(error); // Log the error message for debugging*/

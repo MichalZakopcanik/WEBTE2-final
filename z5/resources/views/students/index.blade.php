@@ -9,7 +9,7 @@
 
         <div class="pull-left">
 
-            <h2>{{__('trans.Userman')}}</h2>
+            <h2>{{__('trans.studentP')}}</h2>
 
         </div>
 
