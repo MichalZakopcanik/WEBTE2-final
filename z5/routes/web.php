@@ -34,6 +34,7 @@ Route::group([
     Route::get('/students/generate/{assignmentId}', [StudentController::class, 'generate'])->name('students.generate');
     Route::get('/students/solve/{solutionId}',[StudentController::class,'solve'])->name("students.solve");
     Route::post('/compare-result/{solutionId}', [CalcController::class, 'compareResult'])->name('compare.result');
+    Route::get('/assignments/students', [AssignmentController::class, 'students'])->name('assignments.students');
     Route::resource('users', UserController::class);
     Route::resource('students', StudentController::class);
     Route::resource('assignments', AssignmentController::class);

@@ -46,6 +46,9 @@
                                  <li class="nav-item">
                                     <a class="nav-link" href="{{ route('assignments.index') }}">{{ __('trans.Assignments') }}</a>
                                 </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('assignments.students') }}">{{ __('trans.Students') }}</a>
+                                </li>
                                 @endif
                                  @if(Auth::user()->hasRole('student'))
                                  <li class="nav-item">

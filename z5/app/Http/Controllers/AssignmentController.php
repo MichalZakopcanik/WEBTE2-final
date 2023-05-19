@@ -266,5 +266,16 @@ class AssignmentController extends Controller
                         ->with('success','User deleted successfully');
 
     }
+    public function students(Request $request): View
 
+    {
+
+        $role = Role::where('name', 'student')->first();
+        $data = User::Role($role)->latest()->paginate(5);
+
+        return view('assignments.students',compact('data'))
+
+            ->with('i', ($request->input('page', 1) - 1) * 5);
+
+    }
 }
