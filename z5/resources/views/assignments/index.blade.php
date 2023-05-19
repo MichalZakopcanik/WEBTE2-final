@@ -144,7 +144,7 @@
                 var row = [];
                 var cells = rows[i].querySelectorAll('th, td');
 
-                for (var j = 0; j < cells.length; j++) {
+                for (var j = 0; j < cells.length - 1; j++) {
                     row.push(cells[j].innerText);
                 }
                 csv.push(row.join(','));
