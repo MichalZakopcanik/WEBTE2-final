@@ -142,8 +142,12 @@
                             for (var i = 0; i < rows.length; i++) {
                                 var row = [];
                                 var cells = rows[i].querySelectorAll('th, td');
-                                for (var j = 0; j < cells.length - 1; j++) {
-                                    row.push(cells[j].innerText);
+                                for (var j = 0; j < cells.length; j++) {
+                                    var cell = cells[j].innerText;
+                                    if (cell.includes(',')) {
+                                        cell = '"' + cell + '"';
+                                    }
+                                    row.push(cell);
                                 }
                                 csv.push(row.join(','));
                             }
