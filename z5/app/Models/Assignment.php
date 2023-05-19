@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use App\Models\User;
 
@@ -44,7 +45,7 @@ class Assignment extends Model
 
         return implode(', ',$this->tex_files);
     }
-    public function users()
+    public function users(): BelongsToMany
     {
         return $this->belongsToMany(User::class, 'assignment_user', 'assignment_id', 'user_id');
     }

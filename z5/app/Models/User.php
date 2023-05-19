@@ -10,6 +10,7 @@ use Laravel\Sanctum\HasApiTokens;
 use Spatie\Permission\Traits\HasRoles;
 
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use App\Models\Assignment;
 use App\Models\Result;
 
@@ -50,7 +51,7 @@ class User extends Authenticatable
     ];
 
 
-    public function assignments()
+    public function assignments():BelongsToMany
     {
         return $this->belongsToMany(Assignment::class, 'assignment_user', 'user_id', 'assignment_id');
     }

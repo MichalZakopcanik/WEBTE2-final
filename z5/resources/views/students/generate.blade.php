@@ -9,11 +9,11 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <!-- Styles -->
-    <link href="{{ asset('../z5/css/app.css') }}" rel="stylesheet">
-    <link href="{{ asset('../z5/css/styles.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/styles.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="https://editor.codecogs.com/assets/css/eqneditor.css"/>
     <!-- MathJax -->
-    <script src="{{ asset('../z5/js/mathjax.js') }}"></script>
+    <script src="{{ asset('js/mathjax.js') }}"></script>
     <script type="text/javascript" id="MathJax-script" async
     src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
     </script>
@@ -21,12 +21,13 @@
 <body>
    <!-- <div id="assignmentId">{{ $assignmentId }}</div> -->
    <div class="d-flex flex-column align-items-center justify-content-center">
-    <div id="task">Pr. {{ $taskContent }}</div>
+    <div id="task">Pr. {!! $taskContent !!}</div>
     </div>
     @if(isset($filename))
     <div class="image-container">
         <div class="image-wrapper">
-            <img class="responsive-image" src="{{ asset('../z5/images/' . $filename) }}" alt="TaskImage">
+            {{dump($filename)}}
+            <img class="responsive-image" src="{{ asset('images/' . $filename) }}" alt="TaskImage">
         </div>
     </div>   
     @endif
@@ -35,7 +36,6 @@
         <img src="{{ asset('../z5/storage/' . $imageFilePath) }}" alt="TaskImage"> 
     @endif-->
 
-    <!-- <div id="solution">{{ $solutionContent }}</div>-->
     <div id="equation-editor">
         <div id="history"></div>
         <div id="toolbar"></div>
@@ -47,7 +47,7 @@
     <div class="container">
     <div class="row justify-content-center mt-2 mb-5">
     <div style="max-width: 200px;">
-    <button id="compareBtn" class="btn btn-success btn-block" onclick="compareResults({{ json_encode($solutionContent) }})">Porovnaj výsledok</button>
+    <button id="compareBtn" class="btn btn-success btn-block" onclick="compareResults({{$solutionId}})">Porovnaj výsledok</button>
     </div>
     </div>
     </div>
@@ -58,7 +58,7 @@
     <script src="https://editor.codecogs.com/assets/js/eqneditor.api.min.js"></script>
     <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-3.6.0.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
-    <script src="{{ asset('../z5/js/script.js') }}"></script>
-    <script src="{{ asset('../z5/js/calc.js') }}"></script>
+    <script src="{{ asset('js/script.js') }}"></script>
+    <script src="{{ asset('js/calc.js') }}"></script>
 </body>
 </html>

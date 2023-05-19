@@ -33,28 +33,43 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
                         @if(Auth::user())
-                    <li class="nav-item">
+                        
+                                @if(Auth::user()->hasRole('admin'))
+                                <li class="nav-item">
                                     <a class="nav-link" href="{{ route('users.index') }}">{{ __('trans.Users') }}</a>
-                                </li>  <li class="nav-item">
+                                </li> 
+                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('roles.index') }}">{{ __('trans.Roles') }}</a>
+                                </li>
+                                @endif
+                                @if(Auth::user()->hasRole('teacher'))
                                  <li class="nav-item">
                                     <a class="nav-link" href="{{ route('assignments.index') }}">{{ __('trans.Assignments') }}</a>
                                 </li>
+                                @endif
+                                 @if(Auth::user()->hasRole('student'))
                                  <li class="nav-item">
                                     <a class="nav-link" href="{{ route('students.index') }}">{{ __('trans.studentP') }}</a>
                                 </li>
-                                <ul>
+                                @endif
+
+                             <li class="navbar-nav dropdown">
+                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                {{__('trans.Language')}}
+                             </a>
+                             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                                     @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
-                                        <li>
-                                            <a rel="alternate" hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
+                                       
+                                            <a  class="dropdown-item"  rel="alternate" hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
                                                 {{ $properties['native'] }}
                                             </a>
-                                        </li>
+                                       
                                     @endforeach
-                                </ul>
-                                                    </ul>
+                            </div>
+                                </li>
+                                                 
                         @endif
-
+                        </ul>
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ms-auto">
                         <!-- Authentication Links -->
