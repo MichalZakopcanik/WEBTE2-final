@@ -15,7 +15,8 @@
                 <script>
                     document.getElementById('downloadBtn').addEventListener('click', function() {
                         var content = document.querySelector('.card-body').textContent;
-                        var xhr = new XMLHttpRequest();
+                        if(content){
+                            var xhr = new XMLHttpRequest();
                         xhr.open('GET', '{{ route('download.pdf') }}?content=' + encodeURIComponent(content), true);
                         xhr.responseType = 'blob';
 
@@ -32,6 +33,8 @@
                         };
 
                         xhr.send();
+                        }
+                      
                     });
                 </script>
             </div>

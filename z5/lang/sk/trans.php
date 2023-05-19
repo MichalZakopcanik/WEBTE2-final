@@ -57,13 +57,29 @@ return [
     //Rest are empty -> won't show -> in case they're needed TODO delete
     'Dashboard' => 'Prístrojový panel',
     'Welcome' => 'Vitajte na stránke',
-    //TODO Instructions for both teachers and students
-    'TeacherInstructions' => 'Tu sú pokyny pre učiteľov',
-    'StudentInstructions' => 'Tu sú pokyny pre študentov',
+    //TODO Update instructions for both teachers and students
+    'TeacherInstructions' => 'Pokyny pre učiteľov: Učiteľ môže vytvoriť novú úlohu pre študentov 
+    pomocou tlačidla Vytvoriť novú úlohu.  Pri vytváraní novej úlohy si môže vybrať odkedy a dokedy
+    bude daná úloha zverejnená, počet bodov za úlohu, súbor/-y na generovanie úlohy a študenta/-ov,
+    pre ktorých danú úlohu vytvorí. Ak chce danú úlohu vytvoriť klikne na tlačidlo Odoslať, späť sa vie vrátiť cez tlačidlo Späť.
+    Na stránke Úlohy (pod pokynmi) má učiteľ prehľad všetkých úloh, nielen jeho, ale aj od iných učiteľov.
+    O týchto úlohách má dostupné informácie v jednotlivých stĺpcoch tabuľky. Jednotlivé úlohy vie upraviť a vymazať.',
+    
+    'StudentInstructions' => 'Pokyny pre študentov: Študent má pod inštrukciami prehľad o svojom účte, svoje meno, email, role a akcie,
+    ktoré môže vykonať. Keď klikne na tlačido Úlohy, tak sa mu otvorí stránka so správou úloh, kde vidí jemu priradené úlohy.
+    Okrem informácií o úlohách vie kliknúť na tlačidlo Generovať, ktorým si vygeneruje z danej úlohy jeden príklad.
+    Viac príkladov si vygenerovať z úlohy nevie. Keď je kliknuté tlačidlo Zobraz a študent predtým príklad vygeneroval je presunutý
+    na stránku, kde sa mu zobrazí zadanie s prípadným obrázkom a matematický editor, do ktorého vie zadávať výsledok.
+    Po prerátaní príkladu a napísaní výsledku do editoru môže kliknúť na tlačidlo Porovnaj výsledok, po ktorom dostane informáciu
+    či daný príklad vypočítal správne alebo nie.
+    Keď v Portáli študenta klikne na tlačidlo Zobraziť otvorí sa stránka, kde má len svoje informácie.',
+    
     'Download' => 'Stiahnuť',
-    '' => '',
-    '' => '',
-    '' => '',
+    'Language' => 'Jazyk',
+    'Submitted' => 'Odovzdané',
+    'Generate' => 'Generovať',
+    'solutionCorrect' => 'Správne riešenie',
+    'solutionWrong' => 'Nesprávne riešenie',
     '' => '',
     '' => '',
 

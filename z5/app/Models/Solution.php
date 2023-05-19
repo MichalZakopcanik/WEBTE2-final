@@ -17,21 +17,19 @@ class Solution extends Model
      * @var array<int, string>
      */
     protected $fillable = [
-        'solution_file_path',
+        'solution_html',
+        'equation_html',
+        'image',
+        'file_name',
         'points',
         'status',
         'result_id',
-    ];
-    /**
-     * The attributes that should be cast.
-     *
-     * @var array<string, string>
-     */
-    protected $casts = [
-        'solution_file_path' => 'array',
     ];
 
     public function result():BelongsTo{
         return $this->belongsTo(Result::class);
     }
+    protected $casts = [
+        'image' => 'array',
+    ];
 }

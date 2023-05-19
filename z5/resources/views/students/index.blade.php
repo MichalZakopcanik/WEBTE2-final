@@ -2,7 +2,20 @@
 
 
 @section('content')
+<div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">{{__('trans.Dashboard')}}</div>
 
+                <div class="card-body">
+                    {{__('trans.StudentInstructions')}}
+                </div>
+                <button id="downloadBtn">{{__('trans.Download')}}</button>
+
+               
+            </div>
+        </div>
+    </div>
 <div class="row">
 
     <div class="col-lg-12 margin-tb">
@@ -73,7 +86,7 @@
 
     <td>
 
-       <a class="btn btn-primary" href="{{ route('students.show',$user->id) }}">Assignments</a>
+       <a class="btn btn-primary" href="{{ route('students.show',$user->id) }}">{{__('trans.Assignments')}}</a>
        <a class="btn btn-info" href="{{ route('users.show',$user->id) }}">{{__('trans.Show')}}</a>
 
     </td>
@@ -89,4 +102,32 @@
 {!! $data->render() !!}
 
 
+@endsection
+
+@section('scripts')
+<script>
+                    document.getElementById('downloadBtn').addEventListener('click', function() {
+                        var content = document.querySelector('.card-body').textContent;
+                        if(content){
+                          var xhr = new XMLHttpRequest();
+                        xhr.open('GET', '{{ route('download.pdf') }}?content=' + encodeURIComponent(content), true);
+                        xhr.responseType = 'blob';
+
+                        xhr.onload = function(e) {
+                            if (this.status === 200) {
+                                var blob = new Blob([this.response], { type: 'application/pdf' });
+                                var downloadUrl = URL.createObjectURL(blob);
+                                var a = document.createElement("a");
+                                a.href = downloadUrl;
+                                a.download = 'PDF.pdf';
+                                document.body.appendChild(a);
+                                a.click();
+                            }
+                        };
+
+                        xhr.send();
+                        }
+                        
+                    });
+                </script>
 @endsection

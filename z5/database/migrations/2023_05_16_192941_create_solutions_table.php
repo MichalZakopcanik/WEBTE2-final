@@ -13,7 +13,10 @@ return new class extends Migration
     {
         Schema::create('solutions', function (Blueprint $table) {
             $table->id();
-            $table->string('solution_file_path');
+            $table->text('solution_html');
+            $table->string("file_name");
+            $table->longText('image')->nullable();
+            $table->longText('equation_html');
             $table->float('points')->default(0);
             $table->enum('status',['finished','open'])->default('open');
             $table->unsignedBigInteger("result_id");

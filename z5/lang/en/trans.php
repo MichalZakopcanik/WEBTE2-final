@@ -57,14 +57,27 @@ return [
     //Rest are empty -> won't show -> in case they're needed TODO delete
     'Dashboard' => 'Dashboard',
     'Welcome' => 'Welcome',
-    //TODO Instructions for both teachers and students
-    'TeacherInstructions' => 'Here are the instructions for teachers',
-    'StudentInstructions' => 'Here are the instructions for students',
+    //TODO Update instructions for both teachers and students
+    'TeacherInstructions' => 'Instructions for teachers: A teacher can create a new assignment for students
+    using the Create New Assignment button. When creating a new assignment, they can choose from and until when
+    the assignment will be published, the number of points for the assignment, the file(s) for generating the assignment and the student(s),
+    for whom they create the assignment. If they want to create the given assignment, they click the Submit button, they can go back via the Back button.
+    On the Assignments page (under the instructions), the teacher has an overview of all assignments, not only theirs, but also from other teachers.
+    Information about these assignments is available in the individual columns of the table. They can edit and delete individual tasks.',
+    
+    'StudentInstructions' => 'Instructions for students: Under the instructions, the students have an overview of their account, their name, email, roles and actions,
+    which they can perform. When they click on the Assignments button, the Assignments management page opens, where they can see the tasks assigned to them.
+    In addition to information about the tasks, they can click the Generate button to generate one task from the given assignment.
+    They cannot generate more tasks from the assignment. When the Show button is clicked and the student previously generated the task, they are moved
+    to a page where they will be shown an entry with a possible image and a mathematical editor in which they can enter the result.
+    After solving the task and writing the result in the editor, they can click the Compare the result button, after which they will receive information
+    whether they calculated the given task correctly or not. When they click the Show button in the Student Portal, a page opens where they have their account information.',
+    
     'Download' => 'Download',
+    'Language' => 'Language',
+    'Submitted' => 'Submitted',
+    'Generate' => 'Generate',
+    'solutionCorrect' => 'Correct solution',
+    'solutionWrong' => 'Incorrect solution',
     '' => '',
-    '' => '',
-    '' => '',
-    '' => '',
-    '' => '',
-
 ];
