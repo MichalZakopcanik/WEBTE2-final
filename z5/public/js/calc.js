@@ -1,3 +1,4 @@
+
   window.onload = function () {
     var textarea = EqEditor.TextArea.link('latexInput')
       .addOutput(new EqEditor.Output('output'))
@@ -5,24 +6,35 @@
   
     EqEditor.Toolbar.link('toolbar').addTextArea(textarea);
   };
-
-  document.addEventListener('DOMContentLoaded', function() {
-    var compareBtn = document.getElementById('compareBtn');
-    compareBtn.addEventListener('click', compareResults);
-  });
-
-  /*function compareResults() {
+  function compareResults(solutionId) {
+    var resultElement = document.getElementById('result');
+    var latexInput = document.getElementById('latexInput');
+    var spans = latexInput.getElementsByTagName('span');
+    var result = '';
+    for (var i = 0; i < spans.length; i++) {
+      result += spans[i].textContent;
+    }
+    var csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
      $.ajax({
-      url: 'https://site249.webte.fei.stuba.sk/z5/compare-result',
+      url: window.location.origin+'/compare-result/'+solutionId,
       method: 'POST',
       data: {
-        textarea.
+        result: result
       },
+      headers: {
+        'X-CSRF-TOKEN': csrfToken 
+      },
+      dataType: 'json',
       success: function(response) {
-        console.log("Success");
+        console.log(response);
+          resultElement.innerHTML = response.message;
+          resultElement.classList.remove('incorrect');
+          resultElement.classList.add('correct');
       },
       error: function(xhr, status, error) {
-        console.log("Error");
+        resultElement.innerHTML =  xhr.responseJSON.message;
+        resultElement.classList.remove('correct');  
+        resultElement.classList.add('incorrect');
       }
     });
-  }*/
+  }
