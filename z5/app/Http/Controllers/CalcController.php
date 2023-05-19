@@ -11,7 +11,6 @@ class CalcController extends Controller
         $this->validate($request,[
             'result' => 'required'
         ]);
-        dd($solutionId);
         $solution = Solution::find($solutionId);
 
         if(is_null($solution)){

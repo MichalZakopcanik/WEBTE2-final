@@ -16,7 +16,7 @@
     }
     var csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
      $.ajax({
-      url: window.location.origin+'/z5/compare-result/'+solutionId,
+      url: window.location.origin+'/compare-result/'+solutionId,
       method: 'POST',
       data: {
         result: result
