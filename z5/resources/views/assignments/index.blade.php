@@ -49,7 +49,7 @@
 @endif
 
 
-<table class="table table-bordered">
+<table class="table table-bordered" id="teachersTable">
 
  <tr>
 
@@ -107,6 +107,7 @@
 
 </table>
 
+<button id="downloadCSV">Export CSV</button>
 
 {!! $data->render() !!}
 
@@ -134,6 +135,31 @@
                             };
 
                             xhr.send();
+                        });
+                        function convertToCSV(table) {
+                            var csv = [];
+                            var rows = table.getElementsByTagName('tr');
+                            for (var i = 0; i < rows.length; i++) {
+                                var row = [];
+                                var cells = rows[i].querySelectorAll('th, td');
+                                for (var j = 0; j < cells.length - 1; j++) {
+                                    row.push(cells[j].innerText);
+                                }
+                                csv.push(row.join(','));
+                            }
+                            return csv.join('\n');
+                        }
+                        document.getElementById('downloadCSV').addEventListener('click', function () {
+                            var table = document.getElementById('teachersTable');
+                            var csvData = convertToCSV(table);
+                            // Create a temporary element for the download
+                            var downloadLink = document.createElement('a');
+                            downloadLink.href = 'data:text/csv;charset=utf-8,' + encodeURI(csvData);
+                            downloadLink.download = 'CSV.csv';
+                            // Simulate a click on the download link to trigger the download
+                            document.body.appendChild(downloadLink);
+                            downloadLink.click();
+                            document.body.removeChild(downloadLink);
                         });
                     </script>
 @endsection
