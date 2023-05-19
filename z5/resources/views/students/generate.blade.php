@@ -47,7 +47,7 @@
     <div class="container">
     <div class="row justify-content-center mt-2 mb-5">
     <div style="max-width: 200px;">
-    <button id="compareBtn" class="btn btn-success btn-block" onclick="compareResults({{$solutionId}})">Porovnaj výsledok</button>
+    <button id="compareBtn" class="btn btn-success btn-block" onclick="compareResults({{$solutionId}})">{{__('trans.Compare')}}</button>
     </div>
     </div>
     </div>

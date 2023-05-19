@@ -15,7 +15,7 @@
 
         <div class="pull-right">
 
-            <a class="btn btn-primary" href="{{ route('users.index') }}">{{__('trans.Back')}}</a>
+            <a class="btn btn-primary" href="{{ route('assignments.index') }}">{{__('trans.Back')}}</a>
 
         </div>
 
