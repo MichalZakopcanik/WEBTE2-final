@@ -12,7 +12,7 @@
                     </div>
                     <button id="downloadBtn">{{__('trans.Download')}}</button>
 
-                   
+
                 </div>
             </div>
         </div>
@@ -79,14 +79,14 @@
 
     <td>
 {{ $assignment->max_points }}
-      
+
     </td>
  <td>
 {{ $assignment->fileList }}
-      
+
     </td> <td>
 {{ $assignment->owner->name }}
-      
+
     </td>
     <td>
 
@@ -142,8 +142,12 @@
                             for (var i = 0; i < rows.length; i++) {
                                 var row = [];
                                 var cells = rows[i].querySelectorAll('th, td');
-                                for (var j = 0; j < cells.length - 1; j++) {
-                                    row.push(cells[j].innerText);
+                                for (var j = 0; j < cells.length-1; j++) {
+                                    var cell = cells[j].innerText;
+                                    if (cell.includes(',')) {
+                                        cell = '"' + cell + '"';
+                                    }
+                                    row.push(cell);
                                 }
                                 csv.push(row.join(','));
                             }
@@ -152,11 +156,9 @@
                         document.getElementById('downloadCSV').addEventListener('click', function () {
                             var table = document.getElementById('teachersTable');
                             var csvData = convertToCSV(table);
-                            // Create a temporary element for the download
                             var downloadLink = document.createElement('a');
                             downloadLink.href = 'data:text/csv;charset=utf-8,' + encodeURI(csvData);
                             downloadLink.download = 'CSV.csv';
-                            // Simulate a click on the download link to trigger the download
                             document.body.appendChild(downloadLink);
                             downloadLink.click();
                             document.body.removeChild(downloadLink);
